@@ -209,6 +209,54 @@ a:focus-visible {
   text-decoration: underline;
 }
 
+/* Avatar */
+.cv-avatar {
+  display: inline-flex;
+  justify-content: center;
+  margin-bottom: var(--space-lg);
+}
+
+.cv-avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.cv-avatar-img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.cv-avatar-fallback {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: white;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 480px) {
+  .cv-avatar-img,
+  .cv-avatar-fallback {
+    width: 100px;
+    height: 100px;
+  }
+
+  .cv-avatar-fallback {
+    font-size: var(--font-size-xl);
+  }
+}
+
 /* ==========================================================================
    Sections
    ========================================================================== */
